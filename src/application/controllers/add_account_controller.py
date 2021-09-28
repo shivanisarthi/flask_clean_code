@@ -11,6 +11,10 @@ class AddAccountController(Controller):
 
     async def handle(self, request: any) -> Account:
         try:
-            return await self.add_account_repo.add(request)
+            data = await self.add_account_repo.add(request)
+            if not data:
+                return self.no_content()
+            return self.ok(data)
         except Exception as e:
             print(e)
+            return self.server_error(e)
