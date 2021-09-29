@@ -1,4 +1,3 @@
-from types import SimpleNamespace
 from src.domain.models.account import Account
 from src.domain.repo.add_account_repo import AddAccountRepo
 from src.application.protocols.controller import Controller
@@ -20,7 +19,7 @@ class AddAccountController(Controller):
         except Exception as e:
             return self.server_error(e)
 
-    def validation(self, request: SimpleNamespace) -> Exception:
+    def validation(self, request: Account) -> Exception:
         if not hasattr(request, 'id'):
             return Exception('Missing id')
         if not hasattr(request, 'name'):
