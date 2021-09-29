@@ -1,21 +1,27 @@
-import asyncio
 import json
-from types import SimpleNamespace
+import asyncio
+# from types import SimpleNamespace
+from collections import namedtuple
 from flask import jsonify, request
 from src.application.protocols.controller import Controller
 
 
 def adaptRoute(controller: Controller):
-    def get_params() -> SimpleNamespace:
+    def tranform(current_dict):
+        return namedtuple('Obj', current_dict.keys())(*current_dict.values())
+
+    def get_params():
         parameters = dict()
         parameters.update(request.json)
         parameters.update(request.args.to_dict())
-        data = json.loads(json.dumps(parameters),
-                          object_hook=lambda d: SimpleNamespace(**d))
+        data = tranform(parameters)
         return data
 
     def execute():
         http = asyncio.run(controller.handle(get_params()))
-        return jsonify(http.body), http.status
+        if http.status >= 200 and http.status <= 299:
+            return jsonify(http.body), http.status
+        else:
+            return dict(message=http.body.args[0]), http.status
 
     return execute
