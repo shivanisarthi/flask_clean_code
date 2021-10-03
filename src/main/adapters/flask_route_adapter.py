@@ -1,9 +1,7 @@
-import json
 import asyncio
-# from types import SimpleNamespace
 from collections import namedtuple
 from flask import jsonify, request
-from src.application.protocols.controller import Controller
+from src.application.controllers import Controller
 
 
 def adaptRoute(controller: Controller):
