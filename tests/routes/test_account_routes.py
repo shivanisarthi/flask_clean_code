@@ -9,17 +9,13 @@ def test_200(client):
     assert data == request_body
 
 
-def test_404_on_invalid_name(client):
+def test_400_on_invalid_name(client):
     request_body = dict(id='1')
     response = client.get('/', json=request_body)
-    data = response.json
     assert response.status_code == 400
-    assert data == dict(message='Missing name')
 
 
-def test_404_on_invalid_id(client):
+def test_400_on_invalid_id(client):
     request_body = dict(name='John Doe')
     response = client.get('/', json=request_body)
-    data = response.json
     assert response.status_code == 400
-    assert data == dict(message='Missing id')

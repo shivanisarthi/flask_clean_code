@@ -6,7 +6,7 @@ from src.application.controllers import Controller
 
 def adaptRoute(controller: Controller):
     def tranform(current_dict):
-        return namedtuple('Obj', current_dict.keys())(*current_dict.values())
+        return namedtuple('request', current_dict.keys())(*current_dict.values())
 
     def get_params():
         parameters = dict()

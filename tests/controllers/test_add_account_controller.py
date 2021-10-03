@@ -14,18 +14,16 @@ async def test_missing_id(client):
     current_controller = AddAccountController(repoMock())
     request = adapt(dict(name='JohnDoe'))
     response = await current_controller.handle(request)
-    expected_response = 'Missing id'
-    assert response.status == 400
-    assert str(response.body) == expected_response
+    expected_response = 400
+    assert response.status == expected_response
 
 
 async def test_missing_name(client):
     current_controller = AddAccountController(repoMock())
     request = adapt(dict(id='10'))
     response = await current_controller.handle(request)
-    expected_response = 'Missing name'
-    assert response.status == 400
-    assert str(response.body) == expected_response
+    expected_response = 400
+    assert response.status == expected_response
 
 
 async def test_account_on_success(client):

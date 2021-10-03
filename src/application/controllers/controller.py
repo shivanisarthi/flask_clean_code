@@ -11,12 +11,13 @@ class HttpResponse:
 
 class Controller():
 
+    @abstractmethod
     async def perform(self, request: Any) -> HttpResponse:
         raise NotImplementedError
 
     async def handle(self, request: Any) -> HttpResponse:
         errors = self.validation(request)
-        if (errors):
+        if errors:
             return self.bad_request(errors)
         try:
             return await self.perform(request)

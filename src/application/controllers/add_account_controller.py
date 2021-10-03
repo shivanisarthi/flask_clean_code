@@ -1,6 +1,7 @@
 from src.domain.models.account import Account
 from src.domain.repo.add_account_repo import AddAccountRepo
 from src.application.controllers.controller import Controller
+from src.application.validator import validator_adapter, schema_account
 
 
 class AddAccountController(Controller):
@@ -15,7 +16,5 @@ class AddAccountController(Controller):
         return self.ok(data)
 
     def validation(self, request: Account) -> Exception:
-        if not hasattr(request, 'id'):
-            return Exception('Missing id')
-        if not hasattr(request, 'name'):
-            return Exception('Missing name')
+        adapter_request = request._asdict()
+        return validator_adapter(adapter_request, schema_account)
