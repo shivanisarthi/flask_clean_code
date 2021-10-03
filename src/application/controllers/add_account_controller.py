@@ -16,4 +16,6 @@ class AddAccountController(Controller):
         return self.ok(data)
 
     def validation(self, request: Account) -> Exception:
-        return validator_adapter(request, schema_account)
+        adapter_request = request._asdict()
+        print(adapter_request)
+        return validator_adapter(adapter_request, schema_account)

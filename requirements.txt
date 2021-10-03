@@ -3,3 +3,5 @@ aiohttp
 pytest
 asyncio
 schema
+Flask-Sqlalchemy
+Flask-Migrate

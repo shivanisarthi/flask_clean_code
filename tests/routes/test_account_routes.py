@@ -2,20 +2,15 @@ from tests.test_main import client
 
 
 def test_200(client):
-    request_body = dict(id='1', name='John Doe')
+    request_body = dict(username='John Doe')
     response = client.get('/', json=request_body)
-    data = response.json
+    expected_response = response.json
+    print(expected_response)
     assert response.status_code == 200
-    assert data == request_body
+    assert expected_response == dict(id=10, username='John Doe')
 
 
 def test_400_on_invalid_name(client):
-    request_body = dict(id='1')
-    response = client.get('/', json=request_body)
-    assert response.status_code == 400
-
-
-def test_400_on_invalid_id(client):
-    request_body = dict(name='John Doe')
+    request_body = dict()
     response = client.get('/', json=request_body)
     assert response.status_code == 400
