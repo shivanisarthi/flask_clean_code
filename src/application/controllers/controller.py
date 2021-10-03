@@ -36,4 +36,4 @@ class Controller():
         return HttpResponse(err, status=500)
 
     def bad_request(self, err: Exception) -> HttpResponse:
-        return HttpResponse(err, status=404)
+        return HttpResponse(err, status=400)
