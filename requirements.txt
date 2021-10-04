@@ -6,3 +6,4 @@ schema
 Flask-Sqlalchemy
 Flask-Migrate
 black
+Faker
