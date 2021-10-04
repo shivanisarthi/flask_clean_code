@@ -4,9 +4,8 @@ from src.infra.sql_postgres.models import AccountModel, db
 
 
 class AccountRepository(AddAccountRepo):
-
     async def add(self, account: Account) -> Account:
-        account = AccountModel(username=account.username)
-        db.session.add(account)
-        db.session.commit()
-        return Account(id=account.id, username=account.username)
+        account_model = AccountModel(username=account.username)
+        await account_model.create()
+        print(account_model)
+        return Account(id=account_model.id, username=account_model.username)

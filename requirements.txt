@@ -5,3 +5,4 @@ asyncio
 schema
 Flask-Sqlalchemy
 Flask-Migrate
+black
