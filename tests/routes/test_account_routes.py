@@ -7,7 +7,6 @@ faker = Faker()
 def test_200(client):
     request_body = dict(username=faker.name())
     response = client.post("/accounts", json=request_body)
-    print(response.json)
     assert response.status_code == 200
 
 
