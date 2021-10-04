@@ -1,5 +1,5 @@
-from src.application.controllers.add_account_controller import AddAccountController
-from src.infra.sql_postgres.account_repository import AccountRepository
+from src.application.controllers import AddAccountController
+from src.infra.sql_postgres import AccountRepository
 
 
 def makeAddAccount() -> AddAccountController:

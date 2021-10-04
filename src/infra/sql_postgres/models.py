@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from src.infra.date.datetime import get_current_date
+from src.infra.date import get_current_date
 
 db = SQLAlchemy()
 migrate = Migrate()

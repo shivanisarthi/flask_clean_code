@@ -1,6 +1,6 @@
-from src.domain.repo.add_account_repo import AddAccountRepo
-from src.domain.models.account import Account
-from src.infra.sql_postgres.models import AccountModel, db
+from src.domain.repo import AddAccountRepo
+from src.domain.models import Account
+from src.infra.sql_postgres import AccountModel
 
 
 class AccountRepository(AddAccountRepo):
