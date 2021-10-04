@@ -4,9 +4,9 @@ from flask import jsonify, request
 from src.application.controllers import Controller
 
 
-def adaptRoute(controller: Controller):
+def adapt_route(controller: Controller):
     def tranform(current_dict):
-        return namedtuple('request', current_dict.keys())(*current_dict.values())
+        return namedtuple("request", current_dict.keys())(*current_dict.values())
 
     def get_params():
         parameters = dict()

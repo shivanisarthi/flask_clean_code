@@ -13,7 +13,7 @@ class HttpResponse:
 class Controller:
     validator: Validator
 
-    def __init__(self, validator=None) -> None:
+    def __init__(self, validator: Validator = None) -> None:
         self.validator = validator
 
     @abstractmethod
@@ -29,7 +29,7 @@ class Controller:
         except Exception as e:
             return self.server_error(e)
 
-    def validation(self, request: Any) -> Any:
+    def validation(self, request: Any) -> Exception:
         return self.validator.validate(request) if self.validator else None
 
     def ok(self, data) -> HttpResponse:
