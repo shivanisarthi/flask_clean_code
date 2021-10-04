@@ -1,6 +1,7 @@
-from abc import ABCMeta, abstractmethod
 from typing import Any
+from abc import abstractmethod
 from dataclasses import dataclass
+from src.application.validator import Validator
 
 
 @dataclass(frozen=True)
@@ -9,7 +10,11 @@ class HttpResponse:
     status: int
 
 
-class Controller():
+class Controller:
+    validator: Validator
+
+    def __init__(self, validator=None) -> None:
+        self.validator = validator
 
     @abstractmethod
     async def perform(self, request: Any) -> HttpResponse:
@@ -25,13 +30,13 @@ class Controller():
             return self.server_error(e)
 
     def validation(self, request: Any) -> Any:
-        return None
+        return self.validator.validate(request) if self.validator else None
 
     def ok(self, data) -> HttpResponse:
         return HttpResponse(data, status=200)
 
     def no_content(self) -> HttpResponse:
-        return HttpResponse('', 204)
+        return HttpResponse("", 204)
 
     def server_error(self, err: Exception) -> HttpResponse:
         return HttpResponse(err, status=500)

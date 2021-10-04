@@ -1,6 +1,5 @@
 from abc import ABCMeta, abstractmethod
-
-from src.domain.models.account import Account
+from src.domain.models import Account
 
 
 class AddAccountRepo(metaclass=ABCMeta):

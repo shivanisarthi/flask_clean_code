@@ -5,5 +5,5 @@ from src.main.adapters.flask_route_adapter import adaptRoute
 
 
 def set_account_routes(app: Flask) -> Flask:
-    app.add_url_rule("/", methods=["POST"], view_func=adaptRoute(makeAddAccount()))
+    app.add_url_rule("/accounts", methods=["POST"], view_func=adaptRoute(makeAddAccount()))
     return app
