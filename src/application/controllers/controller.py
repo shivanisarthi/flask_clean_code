@@ -21,7 +21,7 @@ class Controller:
         raise NotImplementedError
 
     async def handle(self, request: Any) -> HttpResponse:
-        errors = self.validation(request)
+        errors = self.__validation(request)
         if errors:
             return self.bad_request(errors)
         try:
@@ -29,7 +29,7 @@ class Controller:
         except Exception as e:
             return self.server_error(e)
 
-    def validation(self, request: Any) -> Exception:
+    def __validation(self, request: Any) -> Exception:
         return self.validator.validate(request) if self.validator else None
 
     def ok(self, data) -> HttpResponse:
