@@ -1,6 +1,8 @@
 pytest
 pytest-aiohttp
 asyncio
+asyncmock
+mock
 flask
 aiohttp
 schema
