@@ -4,6 +4,8 @@ python:
 # command to install dependencies
 install:
     - pip install -r requirements.txt
+env:
+    - FLASK_APP=run.py
 services:
     - postgresql
 # command to run tests
