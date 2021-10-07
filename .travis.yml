@@ -5,8 +5,7 @@ python:
 install:
     - pip install -r requirements.txt
 env:
-    - FLASK_APP=run.py
-    - DATABASE_URL=postgresql://testing:1234@localhost/flask
+    - FLASK_APP=run.py DATABASE_URL=postgresql://testing:1234@localhost/flask
 services:
     - postgresql
 # command to run tests
