@@ -8,3 +8,5 @@ Flask-Migrate
 black
 Faker
 python-dotenv
+datetime
+pytz
