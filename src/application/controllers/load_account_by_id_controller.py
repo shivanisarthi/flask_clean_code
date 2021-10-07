@@ -1,5 +1,5 @@
-from src.domain.models.account import Account
-from src.domain.repo import LoadAccountByIdRepo
+from src.domain.contracts import LoadAccountByIdRepo
+from src.domain.models import Account
 from src.application.controllers import Controller
 
 

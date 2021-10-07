@@ -1,4 +1,4 @@
-from src.domain.repo import AddAccountRepo, LoadAccountByIdRepo
+from src.domain.contracts import AddAccountRepo, LoadAccountByIdRepo
 from src.domain.models import Account
 from src.infra.sql_postgres import AccountModel
 
