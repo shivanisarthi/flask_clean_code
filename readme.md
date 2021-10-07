@@ -1,5 +1,7 @@
 # Clean architecture with flask
 
+[![Build Status](https://app.travis-ci.com/vineboneto/flask_clean_code.svg?branch=main)](https://app.travis-ci.com/vineboneto/flask_clean_code)
+
 Clean architecture object oriented using flask
 
 #### Design Patterns & Methodologies
