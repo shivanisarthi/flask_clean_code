@@ -1,6 +1,6 @@
-from src.domain.models.account import Account
+from src.domain.models import Account
 from src.domain.repo import AddAccountRepo
-from src.application.controllers.controller import Controller
+from src.application.controllers import Controller
 from src.application.validator import Validator
 
 
