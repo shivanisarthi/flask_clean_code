@@ -15,6 +15,13 @@ def test_add_400_on_invalid_name(client):
     response = client.post("/accounts", json=request_body)
     assert response.status_code == 400
 
+
 def test_load_by_id_200(client):
-    response = client.get(f'/accounts/{1}')
+    response = client.get(f"/accounts/{1}")
     assert response.status_code == 200
+
+
+def test_load_by_id_204(client):
+    response = client.get(f"/accounts/{0}")
+    print(response)
+    assert response.status_code == 204

@@ -8,7 +8,7 @@ faker = Faker()
 
 
 def repo_mock():
-    add_mock = AsyncMock(return_value=Account(id=10, username='John Doe'))
+    add_mock = AsyncMock(return_value=Account(id=10, username="John Doe"))
     repo = Mock()
     repo.add = add_mock
     return repo
@@ -28,11 +28,10 @@ async def test_missing_name(client):
     assert response.status == expected_response
 
 
-async def test_account_on_success(client):
+async def test_add_account_on_success(client):
     current_controller = AddAccountController(repo_mock(), validator_mock(None))
-    request = adapt(dict(username='John Doe'))
+    request = adapt(dict(username="John Doe"))
     response = await current_controller.handle(request)
-    print(request.username)
     expected_response = Account(id=10, username=request.username)
     assert response.status == 200
     assert response.body == expected_response
