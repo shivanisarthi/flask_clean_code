@@ -75,3 +75,5 @@ Just run
 ```shell
 $ flask run
 ```
+
+Architecture Design [whimsical](https://whimsical.com/flask-cleancode-7oCzG2cZKzQmo4eyTpwfVb)
