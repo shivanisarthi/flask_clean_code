@@ -14,3 +14,4 @@ python-dotenv
 datetime
 pytz
 psycopg2
+waitress

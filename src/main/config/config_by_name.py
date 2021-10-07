@@ -1,4 +1,7 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class Config:
@@ -14,7 +17,7 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     TESTING = True
     PRESERVE_CONTEXT_ON_EXCEPTION = False
-    SQLALCHEMY_DATABASE_URI = "postgresql://testing:1234@localhost/flask"
+    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 

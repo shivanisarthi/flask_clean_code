@@ -57,8 +57,6 @@ $ flask db upgrade
 
 > **Testing**
 
-to configure the tests, you need to set the DATABASE_URL manually, which is in `src/main/config/config_by_name.py`, find the TestingConfig class and set SQLALCHEMY_DATABASE_URI
-
 ```shell
 # src/main/config/config_by_name.py
 SQLALCHEMY_DATABASE_URI = "postgresql://testing:1234@localhost/flask"
@@ -75,7 +73,11 @@ $ pytest
 Just run
 
 ```shell
+# Developer
 $ flask run
+
+# Production
+waitress-serve --call 'run:create_app'
 ```
 
 Architecture Design [whimsical](https://whimsical.com/flask-cleancode-7oCzG2cZKzQmo4eyTpwfVb)
