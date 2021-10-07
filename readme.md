@@ -92,3 +92,9 @@ waitress-serve --call 'run:create_app'
 ```
 
 Architecture Design [whimsical](https://whimsical.com/flask-cleancode-7oCzG2cZKzQmo4eyTpwfVb)
+
+### More
+
+[FlaskConfig](https://flask.palletsprojects.com/en/2.0.x/config/)
+[FlaskDeploy](https://flask.palletsprojects.com/en/2.0.x/tutorial/deploy/)
+[FlaskSetupTools](https://flask.palletsprojects.com/en/2.0.x/patterns/distribute/)
