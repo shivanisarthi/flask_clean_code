@@ -13,3 +13,4 @@ Faker
 python-dotenv
 datetime
 pytz
+psycopg2
