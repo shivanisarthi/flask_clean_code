@@ -95,6 +95,6 @@ Architecture Design [whimsical](https://whimsical.com/flask-cleancode-7oCzG2cZKz
 
 ### More
 
-[FlaskConfig](https://flask.palletsprojects.com/en/2.0.x/config/)
-[FlaskDeploy](https://flask.palletsprojects.com/en/2.0.x/tutorial/deploy/)
-[FlaskSetupTools](https://flask.palletsprojects.com/en/2.0.x/patterns/distribute/)
+-   [FlaskConfig](https://flask.palletsprojects.com/en/2.0.x/config/)
+-   [FlaskDeploy](https://flask.palletsprojects.com/en/2.0.x/tutorial/deploy/)
+-   [FlaskSetupTools](https://flask.palletsprojects.com/en/2.0.x/patterns/distribute/)
