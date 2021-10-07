@@ -1,6 +1,6 @@
 # Clean architecture with flask
 
-clean architecture object oriented using flask
+Clean architecture object oriented using flask
 
 #### Design Patterns & Methodologies
 
@@ -15,6 +15,12 @@ clean architecture object oriented using flask
 -   Singleton
 
 ---
+
+## Environment
+
+-   Windows 10 PRO
+-   Python 3.9.6
+-   PostgreSQL 13.2
 
 ## Settings
 
