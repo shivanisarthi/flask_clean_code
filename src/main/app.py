@@ -1,6 +1,6 @@
 from flask import Flask
 from src.main.routes.account_routes import set_account_routes
-from src.main.config.base import config_by_name
+from src.main.config import config_by_name
 from src.infra.sql_postgres import db, migrate
 
 
