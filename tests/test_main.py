@@ -1,7 +1,7 @@
 import os
 import pytest
-from src.main.config.base import config_by_name
-from src.main.app import create_app, db
+from src.main.config import config_by_name
+from src.main.app import create_app
 from collections import namedtuple
 
 
