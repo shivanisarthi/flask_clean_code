@@ -9,6 +9,6 @@ cd src/
 flask run
 python setup.py bdist_wheel
 cd build/lib/src
-env:DATABASE_URL = "postgresql://${USER_DB}:${PASSWORD_DB}@${HOST_DB}/${DATABASE}"
+DATABASE_URL = "postgresql://${USER_DB}:${PASSWORD_DB}@${HOST_DB}/${DATABASE}"
 waitress-serve --call 'run:create_app'
 
