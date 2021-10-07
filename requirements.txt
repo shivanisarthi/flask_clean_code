@@ -1,5 +1,5 @@
 pytest
-pytest-asyncio
+pytest-aiohttp
 asyncio
 flask
 aiohttp
