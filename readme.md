@@ -30,7 +30,6 @@ Clean architecture object oriented using flask
 
 ```shell
 $ pip install -r requirements.txt
-$ set FLASK_APP=run.py
 ```
 
 > **Database**
