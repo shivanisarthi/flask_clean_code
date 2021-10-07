@@ -28,8 +28,6 @@ Clean architecture object oriented using flask
 
 > **Flask**
 
-Run
-
 ```shell
 $ pip install -r requirements.txt
 $ set FLASK_APP=run.py
@@ -57,12 +55,7 @@ $ flask db upgrade
 
 > **Testing**
 
-```shell
-# src/main/config/config_by_name.py
-SQLALCHEMY_DATABASE_URI = "postgresql://testing:1234@localhost/flask"
-```
-
-Then run
+Just run
 
 ```shell
 $ pytest
@@ -74,9 +67,27 @@ Just run
 
 ```shell
 # Developer
+cd src/
 $ flask run
 
-# Production
+#Production
+cd src/
+waitress-serve --call 'run:create_app'
+```
+
+> **Deploy**
+
+```shell
+# Build
+$ python setup.py bdist_wheel
+
+# Open src build
+$ cd build/lib/src
+
+# set env
+$env:DATABASE_URL = "postgresql://${USER_DB}:${PASSWORD_DB}@${HOST_DB}/${DATABASE}"
+
+# start server
 waitress-serve --call 'run:create_app'
 ```
 

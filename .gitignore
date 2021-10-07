@@ -1,2 +1,5 @@
 __pycache__
 .env
+build
+dist
+flask_clean_code.egg-info
